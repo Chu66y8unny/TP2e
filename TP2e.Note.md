@@ -62,3 +62,17 @@ String Operations:
 - `math.sqrt`
 - `math.exp`
 
+A function definition can have calls to other functions which are defined 
+later in the code:
+```Python
+def foo():
+    bar()
+
+def bar():
+    print("bar")
+
+foo()
+```
+
+<http://greenteapress.com/thinkpython2/code/do_four.py>
+
