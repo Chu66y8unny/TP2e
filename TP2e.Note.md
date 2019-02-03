@@ -76,3 +76,42 @@ foo()
 
 <http://greenteapress.com/thinkpython2/code/do_four.py>
 
+
+# C4
+
+- To make the code compatible for both Python 2 and 3, at the top of the 
+  code we should add this: `from __future__ import print_function, division`.
+- `import string` module provides collections of string constants.
+- `ImportError` object has a data descriptor `args` which is a tuple 
+  containing error messages:
+  ```Python
+  try:
+      import some_module
+  except ImportError as e:
+      print(e)
+      print(e.args)
+      print(e.args[0])
+  ```
+- `getattr(obj, name[, default])` gets a named attribute from an object and 
+  is equivalent to x.y. Without a default argument, an `AttributeError` is
+  raised when the attribute doesn't exist:
+  ```Python
+  try:
+      attr = getattr(obj, 'attribute_name')
+  except AttributeError as e:
+      print(e)
+  ```
+- `turtle.Turtle`
+  - handle key-release event of `turtle.TurtleScreen`
+    ```Python
+    import turtle
+    t = turtle.Turtle()
+    screen = t.getscreen()
+    t.onkey(a_handler, 'a')
+    t.onkey(return_handler, 'Return')
+    screen.listen()
+    turtle.mainloop()
+    ```
+  - `turtle.Turtle` movement
+    - `t.goto(delta_x, delta_y)
+
